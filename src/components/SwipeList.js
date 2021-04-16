@@ -304,6 +304,10 @@ const SwipeList = createReactClass({
       this.setRowRef(component, rowId);
     };
   },
+
+  scrollToIndex(index) {
+    this.listView && this.listView.scrollToIndex({ index, animated: true });
+  },
 });
 
 function getRefKeyForRow(rowId) {
