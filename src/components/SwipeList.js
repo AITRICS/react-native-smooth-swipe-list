@@ -78,6 +78,10 @@ const SwipeList = createReactClass({
     this.rowRefs = {};
   },
 
+  componentDidMount() {
+    setTimeout(() => this.listView.flashScrollIndicators(), 500);
+  },
+
   componentWillUnmount() {
     this.clearCloseTimeout();
   },
@@ -233,6 +237,7 @@ const SwipeList = createReactClass({
       return (
         <View style={[styles.listView, this.props.style]}>
           <ScrollView
+            indicatorStyle="black"
             {...this.props}
             ref={this.setListViewRef}
             style={[styles.listView, this.props.style]}
@@ -246,6 +251,7 @@ const SwipeList = createReactClass({
     return (
       <View style={[styles.listView, this.props.style]}>
         <FlatList
+          indicatorStyle="black"
           {...this.props}
           keyExtractor={this.props.keyExtractor}
           ref={this.setListViewRef}
