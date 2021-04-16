@@ -259,6 +259,7 @@ const SwipeList = createReactClass({
           scrollEnabled={this.state.scrollEnabled && this.props.scrollEnabled}
           data={this.state.dataSource}
           renderItem={this.renderSwipeListItem}
+          contentContainerStyle={styles.contentContainer}
         />
       </View>
     );
@@ -327,6 +328,9 @@ const styles = StyleSheet.create({
   listView: {
     alignSelf: "stretch",
     backgroundColor: "rgb(111, 111, 111)",
+  },
+  contentContainer: {
+    flexGrow: 1,
   },
 });
 
