@@ -313,6 +313,9 @@ const SwipeList = createReactClass({
   },
 
   scrollToIndex(index) {
+    if (this.props.data?.length ?? 0 <= index) {
+      return;
+    }
     this.listView && this.listView.scrollToIndex({ index, animated: true });
   },
 });
