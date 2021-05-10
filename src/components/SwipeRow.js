@@ -543,13 +543,6 @@ const SwipeRow = createReactClass({
     }
   },
 
-  isSwipeable() {
-    return (
-      !!(this.props.leftSubView || this.props.rightSubView) &&
-      this.props.swipeEnabled
-    );
-  },
-
   checkSetCloseTimeout(e, g) {
     this.props.onGestureStart(this, e, g);
     this.props.startCloseTimeout();
@@ -579,7 +572,7 @@ const SwipeRow = createReactClass({
       >
         <HorizontalGestureResponder
           style={[styles.containerInner]}
-          enabled={this.isSwipeable()}
+          enabled={this.props.swipeEnabled}
           allowTermination={false}
           shouldSetResponderCapture={this.checkSetCloseTimeout}
           onResponderStart={this.onSwipeStart}
