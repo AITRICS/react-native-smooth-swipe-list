@@ -289,6 +289,7 @@ const SwipeList = createReactClass({
         style={[this.props.rowStyle, item.style]}
         startCloseTimeout={this.onRowPressCheckSetCloseTimeout}
         clearCloseTimeout={this.clearCloseTimeout}
+        swipeEnabled={item.swipeEnabled}
         onSwipeStart={this.handleSwipeStart}
         onSwipeEnd={this.handleSwipeEnd}
         onOpenStart={this.handleRowOpenStart}
